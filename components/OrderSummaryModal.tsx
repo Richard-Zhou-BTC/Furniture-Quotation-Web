@@ -1,5 +1,6 @@
-import React from 'react';
-import { X, Check, Loader2, Download, Printer, Mail } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Check, Loader2, Download, Printer, Mail, QrCode } from 'lucide-react';
+import QRCode from 'react-qr-code';
 import { CartItem } from '../types';
 
 interface OrderSummaryModalProps {
@@ -17,7 +18,12 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
   aiResponse,
   cartItems,
 }) => {
+  const [showQrCode, setShowQrCode] = useState(false);
+
   if (!isOpen) return null;
+
+  // Mock URL that would represent the PDF download
+  const downloadUrl = `https://accolade-furniture.com/quote/download?id=${Date.now()}`;
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 print:absolute print:inset-0 print:z-[100] print:items-start print:px-0">
@@ -40,7 +46,7 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
         </div>
 
         {/* Printable Content */}
-        <div className="overflow-y-auto p-8 flex-1 print:overflow-visible print:p-0">
+        <div className="overflow-y-auto p-8 flex-1 print:overflow-visible print:p-0 relative">
           
           {/* Company Header */}
           <div className="text-center mb-10 pb-6 border-b border-gray-200">
@@ -133,6 +139,34 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
               </div>
             </div>
           )}
+
+          {/* QR Code Overlay */}
+          {showQrCode && (
+            <div className="absolute inset-0 z-10 bg-white/95 backdrop-blur-sm flex items-center justify-center print:hidden">
+              <div className="bg-white p-8 shadow-2xl border border-secondary/20 max-w-sm w-full text-center relative">
+                 <button 
+                  onClick={() => setShowQrCode(false)}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-dark"
+                 >
+                   <X size={20} />
+                 </button>
+                 
+                 <div className="mb-6">
+                    <h3 className="font-serif font-bold text-2xl text-dark mb-2">Mobile Download</h3>
+                    <p className="text-xs uppercase tracking-widest text-gray-400">Scan via WeChat</p>
+                 </div>
+                 
+                 <div className="bg-white p-4 inline-block border border-gray-100 shadow-inner mb-4">
+                    <QRCode value={downloadUrl} size={180} />
+                 </div>
+                 
+                 <div className="flex items-center justify-center gap-2 text-primary font-medium text-sm">
+                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                   Ready to scan
+                 </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Footer Actions - Screen Only */}
@@ -145,9 +179,18 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
                <Printer size={16} />
                Save as PDF
              </button>
+             
+             <button 
+              onClick={() => setShowQrCode(!showQrCode)} 
+              className={`flex-1 border text-dark font-bold text-sm uppercase tracking-widest py-4 transition-all flex items-center justify-center gap-2 ${showQrCode ? 'bg-dark text-white border-dark' : 'bg-white border-secondary/30 hover:bg-secondary/10'}`}
+             >
+               <QrCode size={16} />
+               {showQrCode ? 'Close QR' : 'WeChat / Mobile'}
+             </button>
+
              <button 
               onClick={onClose}
-              className="flex-1 bg-dark text-white font-bold text-sm uppercase tracking-widest py-4 hover:bg-primary transition-colors flex items-center justify-center gap-2"
+              className="flex-1 bg-primary text-white font-bold text-sm uppercase tracking-widest py-4 hover:bg-primary-dark transition-colors flex items-center justify-center gap-2"
              >
                <Check size={16} />
                Finish
