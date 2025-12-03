@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { X, Minus, Plus, Trash2, FileText, ArrowRight } from 'lucide-react';
 import { CartItem } from '../types';
+import { getOptimizedImageUrl } from '../utils';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -62,7 +64,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <div key={item.id} className="flex gap-4 group">
                 <div className="relative w-24 h-24 shrink-0 overflow-hidden bg-gray-100">
                   <img 
-                    src={item.image} 
+                    src={getOptimizedImageUrl(item.image, 200)} 
                     alt={item.name} 
                     className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
                   />

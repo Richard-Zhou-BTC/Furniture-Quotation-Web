@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Plus } from 'lucide-react';
 import { Product } from '../types';
+import { getOptimizedImageUrl } from '../utils';
 
 interface ProductCardProps {
   product: Product;
@@ -13,8 +15,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, 
     <div className="group flex flex-col h-full bg-white transition-all duration-500 hover:shadow-luxury border border-transparent hover:border-secondary/20">
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
         <img 
-          src={product.image} 
+          src={getOptimizedImageUrl(product.image, 600)} 
           alt={product.name} 
+          loading="lazy"
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
         />
         {/* Minimal Tags */}

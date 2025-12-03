@@ -1,7 +1,9 @@
+
 import React, { useState } from 'react';
 import { X, Check, Loader2, Download, Printer, Mail, QrCode } from 'lucide-react';
 import QRCode from 'react-qr-code';
 import { CartItem } from '../types';
+import { getOptimizedImageUrl } from '../utils';
 
 interface OrderSummaryModalProps {
   isOpen: boolean;
@@ -93,7 +95,7 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
                         <td className="px-4 py-6 text-center font-serif text-gray-400">{String(index + 1).padStart(2, '0')}</td>
                         <td className="px-4 py-6">
                           <img 
-                            src={item.image} 
+                            src={getOptimizedImageUrl(item.image, 150)} 
                             alt={item.name} 
                             className="w-16 h-16 object-cover bg-gray-100 grayscale-[10%]" 
                           />
