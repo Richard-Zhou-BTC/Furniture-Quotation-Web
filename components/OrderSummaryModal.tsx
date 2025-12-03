@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Check, Loader2, Download, Printer } from 'lucide-react';
+import { X, Check, Loader2, Download, Printer, Mail } from 'lucide-react';
 import { CartItem } from '../types';
 
 interface OrderSummaryModalProps {
@@ -22,7 +22,7 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 print:absolute print:inset-0 print:z-[100] print:items-start print:px-0">
       <div 
-        className="absolute inset-0 bg-dark/80 backdrop-blur-sm transition-opacity print:hidden"
+        className="absolute inset-0 bg-dark/30 backdrop-blur-sm transition-opacity print:hidden"
         onClick={onClose}
       />
       
@@ -62,8 +62,8 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
             <div className="flex flex-col items-center justify-center py-20 space-y-6 print:hidden">
               <Loader2 size={40} className="text-primary animate-spin" />
               <div className="text-center">
-                 <p className="text-dark font-serif text-lg italic">Consulting AI Designer...</p>
-                 <p className="text-gray-400 text-sm mt-1 uppercase tracking-widest">Analyzing your style selection</p>
+                 <p className="text-dark font-serif text-lg italic">Composing Message...</p>
+                 <p className="text-gray-400 text-sm mt-1 uppercase tracking-widest">Drafting a personal note for you</p>
               </div>
             </div>
           ) : (
@@ -89,7 +89,7 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
                           <img 
                             src={item.image} 
                             alt={item.name} 
-                            className="w-16 h-16 object-cover bg-gray-100" 
+                            className="w-16 h-16 object-cover bg-gray-100 grayscale-[10%]" 
                           />
                         </td>
                         <td className="px-4 py-6">
@@ -114,11 +114,11 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
                 </div>
               </div>
 
-              {/* AI Analysis Section */}
+              {/* AI Thank You Letter Section */}
               <div className="bg-light p-8 border-l-4 border-primary print:bg-transparent print:p-0 print:border-l-0 print:border-t print:pt-6">
                 <h3 className="text-primary text-sm font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  Design Consultation
+                  <Mail size={16} />
+                  A Message from Accolade
                 </h3>
                 <div className="prose prose-stone prose-p:font-serif prose-p:text-dark/80 max-w-none">
                    <div className="whitespace-pre-wrap leading-loose text-justify">
@@ -140,7 +140,7 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
           <div className="p-6 border-t border-gray-100 bg-white shrink-0 flex gap-4 print:hidden">
              <button 
               onClick={() => window.print()} 
-              className="flex-1 border border-gray-200 bg-white text-dark font-bold text-sm uppercase tracking-widest py-4 hover:border-dark transition-all flex items-center justify-center gap-2"
+              className="flex-1 border border-secondary/30 bg-white text-dark font-bold text-sm uppercase tracking-widest py-4 hover:border-dark transition-all flex items-center justify-center gap-2"
              >
                <Printer size={16} />
                Save as PDF

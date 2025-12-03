@@ -30,7 +30,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       />
 
       {/* Drawer Panel */}
-      <div className="relative w-full max-w-md bg-white shadow-2xl h-full flex flex-col animate-slide-in-right border-l border-gray-100">
+      <div className="relative w-full max-w-md bg-white shadow-2xl h-full flex flex-col animate-slide-in-right border-l border-secondary/20">
         {/* Header */}
         <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-white">
           <div>
@@ -39,7 +39,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           </div>
           <button 
             onClick={onClose}
-            className="p-2 hover:bg-gray-50 transition-colors text-gray-400 hover:text-dark"
+            className="p-2 hover:bg-light transition-colors text-gray-400 hover:text-dark"
           >
             <X size={24} className="stroke-[1.5]" />
           </button>
@@ -64,7 +64,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   <img 
                     src={item.image} 
                     alt={item.name} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <div className="flex-1 flex flex-col justify-between py-1">

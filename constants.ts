@@ -112,6 +112,30 @@ export const PRODUCTS: Product[] = [
     type: ItemType.SOFA,
     image: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&w=800&q=80',
     description: '复古油蜡皮材质，宽大舒适的坐感。'
+  },
+  {
+    id: '15',
+    name: 'JUJLSJ花瓣沙发',
+    style: Style.MODERN,
+    type: ItemType.SOFA,
+    image: 'https://i.imgs.ovh/2025/12/03/Ce25E6.png',
+    description: '不展开3.4米【375*115*80】，花瓣造型设计，时尚大气'
+  },
+  {
+    id: '16',
+    name: 'JUJLSJ香奈儿沙发',
+    style: Style.MODERN,
+    type: ItemType.SOFA,
+    image: 'https://i.imgs.ovh/2025/12/03/Ce25E6.png',
+    description: '多尺寸可选（2.6米/2.8米/3.0米/3.2米），尺寸【260-320*109*71】，轻奢简约设计'
+  },
+  {
+    id: '17',
+    name: 'JUJLSJ康纳利沙发',
+    style: Style.MODERN,
+    type: ItemType.SOFA,
+    image: 'https://i.imgs.ovh/2025/12/03/Ce25E6.png',
+    description: '多尺寸可选（1.9米/2.6米/2.7米/4.6米），尺寸【194-463*102-377*88-150】，舒适坐感'
   }
 ];
 

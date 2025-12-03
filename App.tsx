@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ShoppingBag, Search, Filter } from 'lucide-react';
+import { ShoppingBag, Search, Filter, Download } from 'lucide-react';
 import { PRODUCTS, STYLES, ITEM_TYPES } from './constants';
 import { Style, ItemType, Product, CartItem } from './types';
 import { ProductCard } from './components/ProductCard';
@@ -88,11 +88,51 @@ const App: React.FC = () => {
     setIsGenerating(false);
   };
 
+  const handleExportCatalog = () => {
+    // 1. Headers
+    const headers = ['ID', '产品名称 (Name)', '风格 (Style)', '品类 (Type)', '描述 (Description)', '图片链接 (Image)'];
+    
+    // 2. Sort Data (Style -> Type)
+    const sortedProducts = [...PRODUCTS].sort((a, b) => {
+      if (a.style !== b.style) return a.style.localeCompare(b.style, 'zh');
+      return a.type.localeCompare(b.type, 'zh');
+    });
+
+    // 3. Generate CSV Rows
+    const csvContent = [
+      headers.join(','),
+      ...sortedProducts.map(p => {
+        // Escape quotes by doubling them, wrap fields in quotes
+        const escape = (text: string) => `"${text.replace(/"/g, '""')}"`;
+        return [
+          p.id,
+          escape(p.name),
+          escape(p.style),
+          escape(p.type),
+          escape(p.description),
+          escape(p.image)
+        ].join(',');
+      })
+    ].join('\n');
+
+    // 4. Create Blob with BOM (Byte Order Mark) for correct Chinese display in Excel
+    const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+    
+    // 5. Trigger Download
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'Accolade_Catalog_Export.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <div className="min-h-screen bg-light text-dark flex flex-col font-sans selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-light text-dark flex flex-col font-sans selection:bg-primary selection:text-white transition-colors duration-500">
       
       {/* Navbar */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm shrink-0 print:hidden">
+      <header className="sticky top-0 z-40 bg-light/95 backdrop-blur-md border-b border-secondary/20 shadow-sm shrink-0 print:hidden transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
           <div className="flex items-center gap-3 shrink-0">
             <AccoladeLogo />
@@ -110,18 +150,18 @@ const App: React.FC = () => {
                 placeholder="Search collection..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-gray-50 border border-transparent rounded-none py-2.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary focus:bg-white transition-all outline-none placeholder:font-serif placeholder:italic"
+                className="w-full bg-white/50 border border-secondary/30 rounded-none py-2.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary focus:bg-white transition-all outline-none placeholder:font-serif placeholder:italic text-dark"
               />
             </div>
           </div>
 
           <button 
             onClick={() => setIsCartOpen(true)}
-            className="relative p-2 hover:bg-gray-50 transition-colors group shrink-0"
+            className="relative p-2 hover:bg-secondary/10 transition-colors group shrink-0"
           >
             <ShoppingBag size={24} className="text-dark group-hover:text-primary transition-colors stroke-[1.5]" />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 bg-primary text-white text-[10px] font-serif font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white transform scale-100 transition-transform">
+              <span className="absolute top-0 right-0 bg-primary text-white text-[10px] font-serif font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-light transform scale-100 transition-transform">
                 {cartCount}
               </span>
             )}
@@ -133,8 +173,8 @@ const App: React.FC = () => {
       <div className="flex-1 max-w-7xl mx-auto w-full flex items-stretch print:hidden">
         
         {/* Left Sidebar (Desktop) - Level 1: Style */}
-        <aside className="hidden md:block w-64 border-r border-gray-100 bg-white min-h-[calc(100vh-80px)] shrink-0">
-          <div className="sticky top-24 p-8">
+        <aside className="hidden md:block w-64 border-r border-secondary/20 bg-light/50 min-h-[calc(100vh-80px)] shrink-0 transition-colors flex flex-col">
+          <div className="p-8 flex-1">
             <h2 className="text-xs font-bold text-gray-400 uppercase tracking-[0.15em] mb-6 flex items-center gap-2 font-sans">
                <Filter size={12} /> Collections
             </h2>
@@ -146,13 +186,24 @@ const App: React.FC = () => {
                   className={`w-full text-left px-0 py-2 text-sm font-serif transition-all border-l-2 pl-4 ${
                     activeStyle === style 
                       ? 'border-primary text-dark font-bold italic' 
-                      : 'border-transparent text-gray-500 hover:text-dark hover:border-gray-200'
+                      : 'border-transparent text-gray-500 hover:text-dark hover:border-secondary/50'
                   }`}
                 >
                   {style}
                 </button>
               ))}
             </nav>
+          </div>
+          
+          {/* Export Button Footer */}
+          <div className="p-8 pt-0 border-t border-secondary/10 mt-auto">
+            <button
+              onClick={handleExportCatalog}
+              className="w-full mt-6 py-3 px-4 border border-secondary/30 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-primary hover:border-primary transition-colors flex items-center justify-center gap-2"
+            >
+              <Download size={14} />
+              Export Catalog
+            </button>
           </div>
         </aside>
 
@@ -168,7 +219,7 @@ const App: React.FC = () => {
                 placeholder="Search..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white border border-gray-200 py-2 pl-10 pr-4 text-sm rounded-none outline-none focus:border-primary"
+                className="w-full bg-white border border-secondary/30 py-2 pl-10 pr-4 text-sm rounded-none outline-none focus:border-primary text-dark"
               />
             </div>
             <div className="-mx-4 px-4 overflow-x-auto no-scrollbar">
@@ -191,7 +242,7 @@ const App: React.FC = () => {
           </div>
 
           {/* Level 2: Item Type Filter (Minimal Tabs) */}
-          <div className="mb-10 border-b border-gray-100 pb-1">
+          <div className="mb-10 border-b border-secondary/20 pb-1">
              <div className="flex flex-wrap gap-x-6 gap-y-2">
                 {ITEM_TYPES.map(type => (
                    <button
@@ -234,7 +285,7 @@ const App: React.FC = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-24 bg-white border border-gray-100">
+            <div className="text-center py-24 bg-white/50 border border-dashed border-secondary/30">
               <p className="text-gray-400 text-lg font-serif italic">暂无符合条件的商品</p>
               <button 
                 onClick={() => {setSearchTerm(''); setActiveStyle(Style.ALL); setActiveType(ItemType.ALL)}}

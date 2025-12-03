@@ -10,24 +10,29 @@ export const generateOrderAnalysis = async (items: CartItem[]): Promise<string> 
   }
 
   if (items.length === 0) {
-    return "您的选择为空。请添加一些家具以便我们为您提供定制分析。";
+    return "您的选择为空。请添加一些家具以便我们为您生成定制信函。";
   }
 
   const itemsList = items.map(item => `- ${item.name} [${item.style} - ${item.type}] x${item.quantity}`).join('\n');
   
   const prompt = `
-    你是一位专业的室内设计顾问。
-    一位客户为他们的空间选择了以下家具清单：
+    你代表高端家具品牌 "宁海县雅格莱顿家具有限公司"（英文名：Ninghai Accolade Furniture Ltd.）。
+    一位尊贵的客户选择了以下家具清单：
     
     ${itemsList}
     
-    请用中文（Chinese）提供 Markdown 格式的回复，包含以下内容：
-    1. 礼貌且专业的选择摘要。
-    2. 基于所选单品的风格分析（例如：这些单品是否风格统一？混搭是否合理？主要体现了什么氛围？）。
-    3. 一到两条具体的摆放或软装搭配建议（Lighting, Color scheme, etc.）。
-    4. 结束语。
+    请用中文（Chinese）写一封诚挚、优雅且专业的感谢信（Markdown格式）。
     
-    保持语气高端、乐于助人且简洁（200字以内）。不要提及具体价格。
+    内容要求：
+    1. 感谢客户选择雅格家居（Accolade Furniture）。
+    2. 敏锐地捕捉客户所选家具的风格（例如${items[0]?.style}等），赞美客户非凡的审美与品位。
+    3. 简要表达我们对工艺细节的极致追求，承诺为客户打造理想的居住空间。
+    4. 期待与客户的进一步合作。
+    
+    语气风格：
+    - 意式轻奢、知性、温暖（莫兰迪色系的氛围感）。
+    - 避免过于商业化的推销口吻，保持高雅的格调。
+    - 字数控制在200-300字之间。
   `;
 
   try {
@@ -36,9 +41,9 @@ export const generateOrderAnalysis = async (items: CartItem[]): Promise<string> 
       contents: prompt,
     });
     
-    return response.text || "暂时无法生成分析。";
+    return response.text || "暂时无法生成信函。";
   } catch (error) {
     console.error("Error calling Gemini API:", error);
-    return "我们暂时无法联系到 AI 设计顾问。请手动处理您的清单。";
+    return "我们暂时无法联系到 AI 助理。";
   }
 };
