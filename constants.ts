@@ -1,7 +1,6 @@
 import { Style, ItemType, Product } from './types';
 
 export const PRODUCTS: Product[] = [
-  // 简欧系列产品（ID从1重新开始递增）
   {
     id: '1',
     name: '简约仿古温润床',
@@ -22,7 +21,7 @@ export const PRODUCTS: Product[] = [
     id: '3',
     name: '仿古鎏金多功能餐边柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.SIDEBOARD,
     image: 'https://i.imgs.ovh/2025/12/03/Ceo1Yp.jpeg',
     description: '仿古框架 + 金色装饰的餐边柜，兼具储物与装饰性'
   },
@@ -30,7 +29,7 @@ export const PRODUCTS: Product[] = [
     id: '4',
     name: '仿古鎏金雕花餐椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.DINING_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/Ceo336.jpeg',
     description: '仿古造型餐椅，带金色装饰，适配同系列餐边柜 / 餐桌'
   },
@@ -38,7 +37,7 @@ export const PRODUCTS: Product[] = [
     id: '5',
     name: '仿古鎏金精致床前凳',
     style: Style.SIMPLE_EURO,
-    type: ItemType.OTHER,
+    type: ItemType.STOOL,
     image: 'https://i.imgs.ovh/2025/12/03/CeoiUO.jpeg',
     description: '小巧精致的仿古床前凳，带金色装饰，适配同系列床具'
   },
@@ -54,7 +53,7 @@ export const PRODUCTS: Product[] = [
     id: '7',
     name: '简约仿古素面床尾凳',
     style: Style.SIMPLE_EURO,
-    type: ItemType.OTHER,
+    type: ItemType.STOOL,
     image: 'https://i.imgs.ovh/2025/12/03/Ce47ug.jpeg',
     description: '简约仿古床尾凳，线条简洁，适配多款复古床具'
   },
@@ -62,7 +61,7 @@ export const PRODUCTS: Product[] = [
     id: '8',
     name: '基础款仿古实用床尾凳',
     style: Style.SIMPLE_EURO,
-    type: ItemType.OTHER,
+    type: ItemType.STOOL,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4yr0.jpeg',
     description: '基础款仿古床尾凳，侧重实用功能'
   },
@@ -70,7 +69,7 @@ export const PRODUCTS: Product[] = [
     id: '9',
     name: '仿古白金绿撞色大圆几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4OeY.jpeg',
     description: '白 + 金绿撞色的仿古圆几，色彩层次丰富，适配轻奢复古空间'
   },
@@ -78,7 +77,7 @@ export const PRODUCTS: Product[] = [
     id: '10',
     name: '仿古白金绿单门展示酒柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.WINE_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4jy1.jpeg',
     description: '单门仿古酒柜，白 + 金绿装饰，兼具展示与储物'
   },
@@ -94,7 +93,7 @@ export const PRODUCTS: Product[] = [
     id: '12',
     name: '仿古白金绿慵懒休闲椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.LEISURE_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4cgn.jpeg',
     description: '仿古休闲椅，白绿配色 + 金色装饰，坐感宽松舒适'
   },
@@ -102,7 +101,7 @@ export const PRODUCTS: Product[] = [
     id: '13',
     name: '纯色简约百搭角几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4FUM.jpeg',
     description: '纯色基础款角几，适配多种风格空间'
   },
@@ -110,7 +109,7 @@ export const PRODUCTS: Product[] = [
     id: '14',
     name: '轻奢贴金装饰角几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4r3x.jpeg',
     description: '基础款角几 + 贴金装饰，提升轻奢质感'
   },
@@ -126,7 +125,7 @@ export const PRODUCTS: Product[] = [
     id: '16',
     name: '仿古鎏金舒适书椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.DESK_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4SWr.jpeg',
     description: '仿古风格书椅，带金色装饰，适配同系列书桌'
   },
@@ -134,7 +133,7 @@ export const PRODUCTS: Product[] = [
     id: '17',
     name: '仿古鎏金实木书桌',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.DESK,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4Ure.jpeg',
     description: '仿古造型书桌，带金色装饰，适配复古风书房'
   },
@@ -142,7 +141,7 @@ export const PRODUCTS: Product[] = [
     id: '18',
     name: '仿古鎏金多功能梳妆台',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.DRESSING_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4Vsa.jpeg',
     description: '仿古风格梳妆台，带金色装饰 + 储物格，适配复古卧室'
   },
@@ -150,7 +149,7 @@ export const PRODUCTS: Product[] = [
     id: '19',
     name: '基础仿古双门储物酒柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.WINE_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4bKt.jpeg',
     description: '双门仿古酒柜，造型规整，储物充足'
   },
@@ -158,7 +157,7 @@ export const PRODUCTS: Product[] = [
     id: '20',
     name: '基础仿古四门大容量书柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.BOOKCASE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4AOq.jpeg',
     description: '四门大容量仿古书柜，分层收纳书籍'
   },
@@ -166,16 +165,15 @@ export const PRODUCTS: Product[] = [
     id: '21',
     name: '基础仿古四门衣物收纳衣柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.WARDROBE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4RkC.jpeg',
-    description: '四门大空间仿古衣柜，满足e4RkC.jpeg',
     description: '四门大空间仿古衣柜，满足卧室衣物收纳'
   },
   {
     id: '22',
     name: '基础仿古多功能地柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.LIVING_ROOM_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4go4.jpeg',
     description: '仿古地柜，可作电视柜 / 储物柜，适配复古客厅'
   },
@@ -183,7 +181,7 @@ export const PRODUCTS: Product[] = [
     id: '23',
     name: '基础仿古五斗收纳柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.CHEST,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4kNA.jpeg',
     description: '五斗仿古斗柜，分层收纳小件物品'
   },
@@ -191,7 +189,7 @@ export const PRODUCTS: Product[] = [
     id: '24',
     name: '棕色仿古沉稳休闲椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.LEISURE_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/Ce45UN.jpeg',
     description: '棕色系仿古休闲椅，色调沉稳，适配深色复古空间'
   },
@@ -207,7 +205,7 @@ export const PRODUCTS: Product[] = [
     id: '26',
     name: '基础仿古隔断式中部地柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.LIVING_ROOM_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce48xU.jpeg',
     description: '仿古中部地柜，可作隔断 / 储物，划分空间'
   },
@@ -215,7 +213,7 @@ export const PRODUCTS: Product[] = [
     id: '27',
     name: '经典餐椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.DINING_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/Ce49sQ.jpeg',
     description: 'B 系列复古餐椅，造型经典，适配同系列餐桌'
   },
@@ -231,7 +229,7 @@ export const PRODUCTS: Product[] = [
     id: '29',
     name: '实木扶手椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.LEISURE_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4DpF.jpeg',
     description: 'B 系列复古扶手椅，框架复古，坐感舒适'
   },
@@ -239,7 +237,7 @@ export const PRODUCTS: Product[] = [
     id: '30',
     name: '简约餐椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.DINING_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4POm.jpeg',
     description: 'B 系列复古餐椅，简约实用，适配同系列餐桌'
   },
@@ -263,7 +261,7 @@ export const PRODUCTS: Product[] = [
     id: '33',
     name: '仿古白金轻奢餐边柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.SIDEBOARD,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4HV6.jpeg',
     description: 'B 系列白 + 金配色餐边柜，造型优雅，适配轻奢复古餐厅'
   },
@@ -271,7 +269,7 @@ export const PRODUCTS: Product[] = [
     id: '34',
     name: '仿古鎏金浓郁餐边柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.SIDEBOARD,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4Yxd.jpeg',
     description: 'B 系列美 + 金配色餐边柜，风格浓郁，适配传统复古餐厅'
   },
@@ -295,7 +293,7 @@ export const PRODUCTS: Product[] = [
     id: '37',
     name: '方形茶几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4E90.jpeg',
     description: 'B 系列复古方几，适配同系列沙发组合'
   },
@@ -303,7 +301,7 @@ export const PRODUCTS: Product[] = [
     id: '38',
     name: '小巧角几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4dpY.jpeg',
     description: 'B 系列复古角几，小巧实用，适配沙发旁置物'
   },
@@ -311,7 +309,7 @@ export const PRODUCTS: Product[] = [
     id: '39',
     name: '古白三门展示酒柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.WINE_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4tZb.jpeg',
     description: 'B 系列三门仿古白酒柜，白色基底 + 复古框架'
   },
@@ -319,7 +317,7 @@ export const PRODUCTS: Product[] = [
     id: '40',
     name: '古美三门储物酒柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.WINE_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4p4n.jpeg',
     description: 'B 系列三门仿古美酒柜，复古框架 + 温润色调'
   },
@@ -335,7 +333,7 @@ export const PRODUCTS: Product[] = [
     id: '42',
     name: '优美梳妆凳',
     style: Style.SIMPLE_EURO,
-    type: ItemType.OTHER,
+    type: ItemType.STOOL,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4GVx.jpeg',
     description: 'B 系列复古梳妆凳子'
   },
@@ -343,7 +341,7 @@ export const PRODUCTS: Product[] = [
     id: '43',
     name: '优雅梳妆台',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.DRESSING_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4mnM.jpeg',
     description: 'B 系列复古梳妆台，带镜面 + 储物格，造型优雅'
   },
@@ -351,7 +349,7 @@ export const PRODUCTS: Product[] = [
     id: '44',
     name: '双门储物酒柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.WINE_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4uBr.jpeg',
     description: 'B 系列双门复古酒柜，造型规整，储物充足'
   },
@@ -359,7 +357,7 @@ export const PRODUCTS: Product[] = [
     id: '45',
     name: '多功能地柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.LIVING_ROOM_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4Bvh.jpeg',
     description: 'B 系列复古地柜，可作电视柜 / 储物柜，适配同系列客厅'
   },
@@ -383,7 +381,7 @@ export const PRODUCTS: Product[] = [
     id: '48',
     name: '长方茶几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/Ce43Zt.jpeg',
     description: 'B 系列复古长方茶几，适配同系列沙发组合'
   },
@@ -391,7 +389,7 @@ export const PRODUCTS: Product[] = [
     id: '49',
     name: '隔断式中部地柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.LIVING_ROOM_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/Ce4Nqq.jpeg',
     description: 'B 系列复古中部地柜，可作隔断 / 储物，划分空间'
   },
@@ -431,7 +429,7 @@ export const PRODUCTS: Product[] = [
     id: '54',
     name: '简约优雅餐边柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.SIDEBOARD,
     image: 'https://i.imgs.ovh/2025/12/03/CeEOBH.jpeg',
     description: 'C 系列欧式餐边柜，简约优雅，适配轻奢欧式餐厅'
   },
@@ -439,7 +437,7 @@ export const PRODUCTS: Product[] = [
     id: '55',
     name: '柔美餐椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.DINING_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/CeEaFU.jpeg',
     description: 'C 系列欧式餐椅，线条柔美，适配同系列餐桌'
   },
@@ -455,7 +453,7 @@ export const PRODUCTS: Product[] = [
     id: '57',
     name: '优雅扶手椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.LEISURE_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/CeEcIQ.jpeg',
     description: 'C 系列欧式扶手椅，线条优雅，坐感舒适'
   },
@@ -463,7 +461,7 @@ export const PRODUCTS: Product[] = [
     id: '58',
     name: '配套舒适脚踏',
     style: Style.SIMPLE_EURO,
-    type: ItemType.OTHER,
+    type: ItemType.STOOL,
     image: 'https://i.imgs.ovh/2025/12/03/CeEraF.jpeg',
     description: 'C 系列欧式脚踏，造型轻盈，提升沙发坐卧舒适度'
   },
@@ -471,7 +469,7 @@ export const PRODUCTS: Product[] = [
     id: '59',
     name: '两门展示酒柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.WINE_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/CeEvqm.jpeg',
     description: 'C 系列欧式两门酒柜，造型优雅，兼具展示与储物'
   },
@@ -479,7 +477,7 @@ export const PRODUCTS: Product[] = [
     id: '60',
     name: '三人宽敞茶几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/CeEFE9.jpeg',
     description: 'C 系列欧式三人茶几，桌面宽敞，适配同系列沙发'
   },
@@ -487,7 +485,7 @@ export const PRODUCTS: Product[] = [
     id: '61',
     name: '分层书架',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.BOOKCASE,
     image: 'https://i.imgs.ovh/2025/12/03/CeEL0c.jpeg',
     description: 'C 系列欧式书架，分层设计，适配轻奢欧式书房'
   },
@@ -495,7 +493,7 @@ export const PRODUCTS: Product[] = [
     id: '62',
     name: '柔美梳妆凳',
     style: Style.SIMPLE_EURO,
-    type: ItemType.OTHER,
+    type: ItemType.STOOL,
     image: 'https://i.imgs.ovh/2025/12/03/CeEU26.jpeg',
     description: 'C 系列欧式梳妆凳，线条柔美，适配同系列梳妆台'
   },
@@ -511,7 +509,7 @@ export const PRODUCTS: Product[] = [
     id: '64',
     name: '四门大容量书柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.BOOKCASE,
     image: 'https://i.imgs.ovh/2025/12/03/CeEzFd.jpeg',
     description: 'C 系列欧式四门书柜，大容量分层收纳书籍'
   },
@@ -519,7 +517,7 @@ export const PRODUCTS: Product[] = [
     id: '65',
     name: '五斗收纳柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.CHEST,
     image: 'https://i.imgs.ovh/2025/12/03/CeEADg.jpeg',
     description: 'C 系列欧式五斗柜，分层收纳小件物品'
   },
@@ -527,7 +525,7 @@ export const PRODUCTS: Product[] = [
     id: '66',
     name: '小巧边几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/CeERh0.jpeg',
     description: 'C 系列欧式小茶几，小巧实用，适配沙发旁置物'
   },
@@ -543,7 +541,7 @@ export const PRODUCTS: Product[] = [
     id: '68',
     name: '中部厅柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.LIVING_ROOM_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/CeEq5b.jpeg',
     description: 'C 系列欧式中部厅柜，可作隔断 / 装饰柜，划分空间'
   },
@@ -551,7 +549,7 @@ export const PRODUCTS: Product[] = [
     id: '69',
     name: '组合梳妆台',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.DRESSING_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/CeE5E1.jpeg',
     description: 'C 系列欧式组合梳妆台，含镜面 + 储物单元，造型精致'
   },
@@ -559,7 +557,7 @@ export const PRODUCTS: Product[] = [
     id: '70',
     name: '经典餐椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.DINING_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/CeEezL.jpeg',
     description: 'D 系列复古餐椅，造型经典，适配同系列餐桌'
   },
@@ -575,7 +573,7 @@ export const PRODUCTS: Product[] = [
     id: '72',
     name: '简约餐椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.DINING_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/CeEs2x.jpeg',
     description: 'D 系列复古餐椅，简约实用，适配同系列餐桌'
   },
@@ -591,7 +589,7 @@ export const PRODUCTS: Product[] = [
     id: '74',
     name: '实木扶手椅',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CHAIR,
+    type: ItemType.LEISURE_CHAIR,
     image: 'https://i.imgs.ovh/2025/12/03/CeEMSr.jpeg',
     description: 'D 系列复古扶手椅，框架复古，坐感舒适'
   },
@@ -623,7 +621,7 @@ export const PRODUCTS: Product[] = [
     id: '78',
     name: '六斗收纳柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.CHEST,
     image: 'https://i.imgs.ovh/2025/12/03/CeEnja.jpeg',
     description: 'D 系列复古六斗柜，大容量分层收纳物品'
   },
@@ -661,7 +659,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: '83',
-    name: '长形餐桌',
+    name: '形餐桌',
     style: Style.SIMPLE_EURO,
     type: ItemType.DINING_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/CeElSH.jpeg',
@@ -671,7 +669,7 @@ export const PRODUCTS: Product[] = [
     id: '84',
     name: '现代复古大茶几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.OTHER,
+    type: ItemType.DECOR,
     image: 'https://i.imgs.ovh/2025/12/03/CeEEXN.jpeg',
     description: '精致装饰摆件，适配多种风格空间'
   },
@@ -679,7 +677,7 @@ export const PRODUCTS: Product[] = [
     id: '85',
     name: '现代复古多功能玄关柜',
     style: Style.SIMPLE_EURO,
-    type: ItemType.TABLE,
+    type: ItemType.COFFEE_TABLE,
     image: 'https://i.imgs.ovh/2025/12/03/CeEtMU.jpeg',
     description: 'YG 系列现代复古大茶几，造型简约大气，适配混搭风格客厅'
   },
@@ -687,7 +685,7 @@ export const PRODUCTS: Product[] = [
     id: '86',
     name: '奢装饰角几',
     style: Style.SIMPLE_EURO,
-    type: ItemType.CABINET,
+    type: ItemType.ENTRANCE_CABINET,
     image: 'https://i.imgs.ovh/2025/12/03/CeEKhX.jpeg',
     description: 'YG 系列现代复古玄关柜，兼具储物与装饰，适配入户区域'
   }
