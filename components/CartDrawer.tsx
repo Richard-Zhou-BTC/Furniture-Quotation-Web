@@ -36,7 +36,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         {/* Header */}
         <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-white">
           <div>
-            <h2 className="text-2xl font-serif font-bold text-dark">Your Selection</h2>
+            <h2 className="text-2xl font-serif font-bold text-dark">已选清单</h2>
             <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Curated Items</p>
           </div>
           <button 
@@ -54,9 +54,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <div className="w-16 h-16 border border-gray-200 flex items-center justify-center rounded-full">
                 <FileText size={24} className="stroke-[1]" />
               </div>
-              <p className="text-center font-serif text-lg text-gray-400 italic">No items selected</p>
+              <p className="text-center font-serif text-lg text-gray-400 italic">暂无已选商品</p>
               <button onClick={onClose} className="text-primary text-sm font-bold uppercase tracking-widest hover:text-dark transition-colors">
-                Browse Collection
+                浏览产品目录
               </button>
             </div>
           ) : (
@@ -108,14 +108,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         {cartItems.length > 0 && (
           <div className="p-6 border-t border-gray-100 bg-light">
             <div className="mb-4 flex justify-between items-center text-sm">
-               <span className="text-gray-500">Selected Items</span>
+               <span className="text-gray-500">商品总数</span>
                <span className="font-serif font-bold text-dark text-lg">{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
             </div>
             <button
               onClick={onGenerateList}
               className="w-full bg-dark text-white py-4 font-bold text-sm uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-3"
             >
-              Generate Summary <ArrowRight size={16} />
+              生成报价单 <ArrowRight size={16} />
             </button>
           </div>
         )}

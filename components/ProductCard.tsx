@@ -45,10 +45,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, 
           }`}
         >
           {addedCount > 0 ? (
-            <>SELECTED ({addedCount})</>
+            <>已添加 ({addedCount})</>
           ) : (
             <>
-              <Plus size={14} /> Add to List
+              <Plus size={14} /> 加入清单
             </>
           )}
         </button>

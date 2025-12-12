@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { ShoppingBag, Search, Filter, Download } from 'lucide-react';
 import { PRODUCTS, STYLES, ITEM_TYPES } from './constants';
@@ -147,7 +148,7 @@ const App: React.FC = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors" size={18} />
               <input 
                 type="text"
-                placeholder="Search collection..."
+                placeholder="搜索产品..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full bg-white/50 border border-secondary/30 rounded-none py-2.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary focus:bg-white transition-all outline-none placeholder:font-serif placeholder:italic text-dark"
@@ -176,7 +177,7 @@ const App: React.FC = () => {
         <aside className="hidden md:block w-64 border-r border-secondary/20 bg-light/50 min-h-[calc(100vh-80px)] shrink-0 transition-colors flex flex-col">
           <div className="p-8 flex-1">
             <h2 className="text-xs font-bold text-gray-400 uppercase tracking-[0.15em] mb-6 flex items-center gap-2 font-sans">
-               <Filter size={12} /> Collections
+               <Filter size={12} /> 产品系列
             </h2>
             <nav className="space-y-2">
               {STYLES.map(style => (
@@ -202,7 +203,7 @@ const App: React.FC = () => {
               className="w-full mt-6 py-3 px-4 border border-secondary/30 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-primary hover:border-primary transition-colors flex items-center justify-center gap-2"
             >
               <Download size={14} />
-              Export Catalog
+              导出目录
             </button>
           </div>
         </aside>
@@ -216,7 +217,7 @@ const App: React.FC = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
               <input 
                 type="text"
-                placeholder="Search..."
+                placeholder="搜索..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full bg-white border border-secondary/30 py-2 pl-10 pr-4 text-sm rounded-none outline-none focus:border-primary text-dark"
@@ -291,7 +292,7 @@ const App: React.FC = () => {
                 onClick={() => {setSearchTerm(''); setActiveStyle(Style.ALL); setActiveType(ItemType.ALL)}}
                 className="mt-6 text-primary text-sm font-bold uppercase tracking-widest hover:text-dark transition-colors"
               >
-                View All Collection
+                查看全部产品
               </button>
             </div>
           )}
@@ -325,9 +326,9 @@ const App: React.FC = () => {
           >
             <div className="flex items-center gap-3">
               <span className="bg-primary text-white w-6 h-6 flex items-center justify-center text-xs font-serif">{cartCount}</span>
-              <span className="font-serif italic text-lg">Selection</span>
+              <span className="font-serif italic text-lg">已选清单</span>
             </div>
-            <span className="text-xs uppercase tracking-widest text-gray-300">View List</span>
+            <span className="text-xs uppercase tracking-widest text-gray-300">查看清单</span>
           </button>
         </div>
       )}
