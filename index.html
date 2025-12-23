@@ -50,6 +50,11 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #9AA6A3; 
       }
+      @media print {
+        .print-break-before {
+          page-break-before: always;
+        }
+      }
     </style>
   <script type="importmap">
 {
@@ -59,7 +64,8 @@
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react-qr-code": "https://esm.sh/react-qr-code@2.0.15"
+    "react-qr-code": "https://esm.sh/react-qr-code@2.0.15",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
   }
 }
 </script>

@@ -1,55 +1,69 @@
+export enum Language {
+  ZH = 'zh',
+  EN = 'en',
+  FR = 'fr',
+  ES = 'es',
+  JA = 'ja'
+}
+
 export enum Style {
-  ALL = '全部风格',
-  SIMPLE_EURO = '简欧系列',
-  MODERN = '现代风格',
-  AMERICAN = '美式风格',
-  NEW_CHINESE = '新中式风格',
-  FRENCH = '法式风格',
-  OTHER = '其他'
+  ALL = 'ALL',
+  SIMPLE_EURO = 'SIMPLE_EURO',
+  MODERN = 'MODERN',
+  AMERICAN = 'AMERICAN',
+  NEW_CHINESE = 'NEW_CHINESE',
+  FRENCH = 'FRENCH',
+  OTHER = 'OTHER'
 }
 
 export enum ItemType {
-  ALL = '全部品类',
-  SOFA = '沙发',
-  BED = '床',
-  DINING_TABLE = '餐桌',
-  COFFEE_TABLE = '茶几/角几',
-  
-  DINING_CHAIR = '餐椅',
-  LEISURE_CHAIR = '休闲椅',
-  DESK_CHAIR = '书椅',
-  STOOL = '凳子',
-  
-  SIDEBOARD = '餐边柜',
-  WINE_CABINET = '酒柜',
-  BOOKCASE = '书柜/书架',
-  WARDROBE = '衣柜',
-  LIVING_ROOM_CABINET = '厅柜/地柜',
-  CHEST = '斗柜',
-  ENTRANCE_CABINET = '玄关柜',
-  
-  DESK = '书桌',
-  DRESSING_TABLE = '梳妆台',
-  NIGHTSTAND = '床头柜',
-  
-  DECOR = '摆件',
-  OTHER = '其他'
+  ALL = 'ALL',
+  SOFA = 'SOFA',
+  BED = 'BED',
+  DINING_TABLE = 'DINING_TABLE',
+  COFFEE_TABLE = 'COFFEE_TABLE',
+  DINING_CHAIR = 'DINING_CHAIR',
+  LEISURE_CHAIR = 'LEISURE_CHAIR',
+  DESK_CHAIR = 'DESK_CHAIR',
+  STOOL = 'STOOL',
+  SIDEBOARD = 'SIDEBOARD',
+  WINE_CABINET = 'WINE_CABINET',
+  BOOKCASE = 'BOOKCASE',
+  WARDROBE = 'WARDROBE',
+  LIVING_ROOM_CABINET = 'LIVING_ROOM_CABINET',
+  CHEST = 'CHEST',
+  ENTRANCE_CABINET = 'ENTRANCE_CABINET',
+  DESK = 'DESK',
+  DRESSING_TABLE = 'DRESSING_TABLE',
+  NIGHTSTAND = 'NIGHTSTAND',
+  DECOR = 'DECOR',
+  OTHER = 'OTHER'
 }
 
 export interface Product {
   id: string;
   name: string;
+  nameEn?: string;
+  nameFr?: string;
+  nameEs?: string;
+  nameJa?: string;
   style: Style;
   type: ItemType;
   image: string;
   description: string;
+  descriptionEn?: string;
+  descriptionFr?: string;
+  descriptionEs?: string;
+  descriptionJa?: string;
 }
 
 export interface CartItem extends Product {
   quantity: number;
 }
 
-export interface OrderSummaryData {
+export interface QuoteRecord {
+  id: string;
+  timestamp: number;
   items: CartItem[];
-  aiAdvice?: string;
+  totalQuantity: number;
 }
